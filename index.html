@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awwwards Replica (Light Theme) - Pure CSS</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    
+    <style>
+      
+        :root {
+            --color-white: #fff;
+            --color-black: #000;
+            --color-dark-text: #1a1a1a;
+            --color-gray-900: #111827; /* Near black */
+            --color-gray-800: #1f2937;
+            --color-gray-700: #374151;
+            --color-gray-600: #4b5563;
+            --color-gray-500: #6b7280;
+            --color-gray-400: #9ca3af;
+            --color-gray-300: #d1d5db;
+            --color-gray-200: #e5e7eb;
+            --color-gray-100: #f3f4f6;
+            --color-red-600: #dc2626;
+            --color-orange-600: #ea580c;
+            --color-orange-700: #c2410c;
+            --color-yellow-500: #f59e0b;
+            --color-yellow-400: #facc15;
+            --color-indigo-900: #312e81;
+            --color-indigo-700: #4338ca;
+            --color-purple-600: #9333ea;
+            --color-green-400: #4ade80;
+            --color-blue-400: #60a5fa;
+            --color-blue-700: #1d4ed8;
+        }
+
+        /* Base & Utility Reset */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-white);
+            color: var(--color-dark-text);
+            min-height: 100vh;
+            padding-bottom: 5rem; /* pb-20 */
+        }
+
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .max-w-7xl { max-width: 80rem; }
+        .px-4 { padding-left: 1rem; padding-right: 1rem; }
+        .py-3 { padding-top: 0.75rem; padding-bottom: 0.75rem; }
+        .py-16 { padding-top: 4rem; padding-bottom: 4rem; }
+        .pt-16 { padding-top: 4rem; }
+        .pb-32 { padding-bottom: 8rem; }
+        .mt-8 { margin-top: 2rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-20 { margin-bottom: 5rem; }
+        .mb-24 { margin-bottom: 6rem; }
+        .ml-1 { margin-left: 0.25rem; }
+        .ml-2 { margin-left: 0.5rem; }
+        .mx-3 { margin-left: 0.75rem; margin-right: 0.75rem; }
+        
+        .leading-none { line-height: 1; }
+        .leading-tight { line-height: 1.25; }
+        .text-center { text-align: center; }
+        
+        .uppercase { text-transform: uppercase; }
+        .font-normal { font-weight: 400; }
+        .font-semibold { font-weight: 600; }
+        .font-bold { font-weight: 700; }
+        .font-black { font-weight: 900; }
+
+        .text-xs { font-size: 0.75rem; line-height: 1rem; }
+        .text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+        .text-base { font-size: 1rem; line-height: 1.5rem; }
+        .text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+        .text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+        .text-2xl { font-size: 1.5rem; line-height: 2rem; }
+        .text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+        .text-4xl { font-size: 2.25rem; line-height: 2.5rem; }
+        .text-5xl { font-size: 3rem; line-height: 1; }
+        .text-6xl { font-size: 3.75rem; line-height: 1; }
+        .text-7xl { font-size: 4.5rem; line-height: 1; }
+
+        .tracking-tighter { letter-spacing: -0.05em; }
+        .tracking-wider { letter-spacing: 0.05em; }
+
+        .bg-white { background-color: var(--color-white); }
+        .bg-black { background-color: var(--color-black); }
+        .bg-gray-50:hover { background-color: #f9fafb; } /* Subtle hover for table rows */
+        .bg-gray-100 { background-color: var(--color-gray-100); }
+        .bg-gray-200 { background-color: var(--color-gray-200); }
+        .bg-gray-400 { background-color: var(--color-gray-400); }
+        .bg-gray-800 { background-color: var(--color-gray-800); }
+        .bg-gray-900 { background-color: var(--color-gray-900); }
+        .bg-orange-600 { background-color: var(--color-orange-600); }
+        .bg-indigo-900 { background-color: var(--color-indigo-900); }
+        
+        .text-white { color: var(--color-white); }
+        .text-black { color: var(--color-black); }
+        .text-gray-900 { color: var(--color-gray-900); }
+        .text-gray-800 { color: var(--color-gray-800); }
+        .text-gray-700 { color: var(--color-gray-700); }
+        .text-gray-600 { color: var(--color-gray-600); }
+        .text-gray-500 { color: var(--color-gray-500); }
+        .text-gray-400 { color: var(--color-gray-400); }
+        .text-red-600 { color: var(--color-red-600); }
+        .text-yellow-500 { color: var(--color-yellow-500); }
+        .text-yellow-400 { color: var(--color-yellow-400); }
+        .text-red-400 { color: #f87171; } /* Specific red in gaming card */
+        .text-green-400 { color: var(--color-green-400); }
+        .text-blue-400 { color: var(--color-blue-400); }
+        .text-purple-600 { color: var(--color-purple-600); }
+        .text-blue-700 { color: var(--color-blue-700); }
+        
+        .border { border-width: 1px; border-style: solid; }
+        .border-t { border-top-width: 1px; border-top-style: solid; }
+        .border-b { border-bottom-width: 1px; border-bottom-style: solid; }
+        .border-gray-900 { border-color: var(--color-gray-900); }
+        .border-gray-700 { border-color: var(--color-gray-700); }
+        .border-gray-400 { border-color: var(--color-gray-400); }
+        .border-gray-300 { border-color: var(--color-gray-300); }
+        .border-gray-200 { border-color: var(--color-gray-200); }
+        
+        .rounded-full { border-radius: 9999px; }
+        .rounded-md { border-radius: 0.375rem; }
+        .rounded-lg { border-radius: 0.5rem; }
+        .rounded-xl { border-radius: 0.75rem; }
+        .rounded-2xl { border-radius: 1.5rem; }
+
+        .p-2 { padding: 0.5rem; }
+        .p-4 { padding: 1rem; }
+        .p-8 { padding: 2rem; }
+        .md-p-12 { padding: 3rem; }
+
+        .w-64 { width: 16rem; }
+        .w-8 { width: 2rem; }
+        .w-7 { width: 1.75rem; }
+        .w-10 { width: 2.5rem; }
+        .h-2 { height: 0.5rem; }
+        .h-full { height: 100%; }
+        .h-7 { height: 1.75rem; }
+        .h-8 { height: 2rem; }
+        .h-10 { height: 2.5rem; }
+        .min-h-300 { min-height: 300px; }
+        .aspect-4-5 { aspect-ratio: 4 / 5; }
+        .aspect-4-3 { aspect-ratio: 4 / 3; }
+        .object-cover { object-fit: cover; }
+
+        .overflow-hidden { overflow: hidden; }
+        .z-10 { z-index: 10; }
+        .relative { position: relative; }
+        .sticky { position: sticky; }
+        .top-0 { top: 0; }
+        
+        .transition { transition-property: all; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 0.15s; }
+        .hover-bg-gray-800:hover { background-color: var(--color-gray-800); }
+        .hover-bg-gray-100:hover { background-color: var(--color-gray-100); }
+        .hover-bg-gray-200:hover { background-color: var(--color-gray-200); }
+        .hover-bg-black:hover { background-color: var(--color-black); }
+        .hover-text-black:hover { color: var(--color-black); }
+        .hover-text-red-600:hover { color: var(--color-red-600); }
+        .hover-opacity-90:hover { opacity: 0.9; }
+        .focus-outline-none:focus { outline: 2px solid transparent; outline-offset: 2px; }
+        .focus-border-gray-400:focus { border-color: var(--color-gray-400); }
+        
+        .divide-y-gray-200 > div + div { border-top-width: 1px; border-color: var(--color-gray-200); }
+
+        /* Custom Flex/Grid/Layout Classes */
+        .flex { display: flex; }
+        .flex-col { flex-direction: column; }
+        .justify-between { justify-content: space-between; }
+        .justify-center { justify-content: center; }
+        .justify-end { justify-content: flex-end; }
+        .items-center { align-items: center; }
+        .items-start { align-items: flex-start; }
+        .items-end { align-items: flex-end; }
+        .space-x-1 > * + * { margin-left: 0.25rem; }
+        .space-x-2 > * + * { margin-left: 0.5rem; }
+        .space-x-4 > * + * { margin-left: 1rem; }
+        .space-x-6 > * + * { margin-left: 1.5rem; }
+        .space-y-1 > * + * { margin-top: 0.25rem; }
+        .space-y-2 > * + * { margin-top: 0.5rem; }
+        .space-y-3 > * + * { margin-top: 0.75rem; } /* Added for blog cards */
+        .space-y-4 > * + * { margin-top: 1rem; }
+        
+        .grid { display: grid; }
+        .grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+        .grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+        .grid-cols-6 { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+        .grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+        .gap-6 { gap: 1.5rem; }
+        .gap-8 { gap: 2rem; }
+        .col-span-1 { grid-column: span 1 / span 1; }
+        .col-span-2 { grid-column: span 2 / span 2; }
+        .col-span-5 { grid-column: span 5 / span 5; }
+        .col-span-6 { grid-column: span 6 / span 6; }
+        .flex-shrink-0 { flex-shrink: 0; }
+
+        /* Hide and Show */
+        .hidden { display: none !important; }
+
+        /* Custom Specifics */
+        .hero-title {
+            line-height: 1.0;
+            letter-spacing: -0.02em; /* Tighter spacing for the large font */
+        }
+        .agency-details {
+            transform: translateY(-50%); /* Moves the block up slightly to sit closer to the title */
+            margin-top: -3rem; /* Further adjustment */
+        }
+        .project-card:hover {
+            opacity: 0.85;
+            transition: opacity 0.3s;
+        }
+        .creator-card {
+            background-color: var(--color-black);
+            color: var(--color-white);
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        /* --- New Featured Section Styles --- */
+        .weekly-showcase-container {
+            /* Adjusted for Light Theme */
+            background-color: var(--color-gray-100); 
+            border: 1px solid var(--color-gray-200);
+            border-radius: 1.5rem; /* rounded-2xl */
+            padding: 2.5rem; /* p-10 */
+            margin-bottom: 6rem; /* mb-24 */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08); /* Light theme shadow */
+        }
+        @media (min-width: 768px) {
+            .weekly-showcase-container {
+                padding: 4rem; /* md:p-16 */
+            }
+        }
+        .showcase-flex {
+            /* flex flex-col lg:flex-row justify-between items-start lg:items-center */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        @media (min-width: 1024px) {
+            .showcase-flex {
+                flex-direction: row;
+                align-items: center;
+            }
+        }
+        .showcase-btn {
+            /* px-8 py-4 bg-yellow-500 text-black font-bold text-lg rounded-xl transition */
+            padding: 1rem 2rem;
+            background-color: var(--color-yellow-500);
+            color: var(--color-black);
+            font-weight: 700;
+            font-size: 1.125rem; /* text-lg */
+            border-radius: 0.75rem;
+            transition: background-color 0.3s, box-shadow 0.3s;
+        }
+        .showcase-btn:hover {
+            background-color: var(--color-yellow-400);
+            box-shadow: 0 6px 10px rgba(245, 158, 11, 0.4);
+        }
+        .mb-6-lg-0 { margin-bottom: 1.5rem; }
+        @media (min-width: 1024px) {
+            .mb-6-lg-0 { margin-bottom: 0; }
+        }
+        /* --- End New Featured Section Styles --- */
+
+
+        /* Responsive Media Queries (Min-width) */
+        @media (min-width: 640px) { /* sm */
+            .sm-px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
+            .sm-text-8xl { font-size: 6rem; line-height: 1; }
+            .sm-text-9xl { font-size: 8rem; line-height: 1; }
+            .sm-block { display: block; }
+        }
+
+        @media (min-width: 768px) { /* md */
+            .md-px-6 {
+                 padding-left: 1.5rem; padding-right: 1.5rem;
+                 }
+            .md-px-12 { 
+                padding-left: 3rem; padding-right: 3rem;
+             }
+            .md-text-9xl { font-size: 8rem; line-height: 1; }
+            .md-text-left { text-align: left; }
+            .md-flex-row { flex-direction: row; }
+            .md-space-x-8 > * + * { margin-left: 2rem; margin-top: 0; }
+            .md-space-y-0 > * + * { margin-top: 0; }
+            .md-grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); } /* ADDED */
+            .md-grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+            .md-grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+            .md-grid-cols-7 { grid-template-columns: repeat(7, minmax(0, 1fr)); }
+            .md-col-span-1 { grid-column: span 1 / span 1; }
+            .md-col-span-2 { grid-column: span 2 / span 2; }
+            .md-col-span-5 { grid-column: span 5 / span 5; }
+            .md-col-span-6 { grid-column: span 6 / span 6; }
+            .md-block { display: block; }
+            .md-hidden { display: none !important; }
+            .md-mb-0 { margin-bottom: 0; }
+        }
+
+        @media (min-width: 1024px) { /* lg */
+            .lg-px-8 { padding-left: 2rem; padding-right: 2rem; }
+            .lg-flex { display: flex; }
+            .lg-hidden { display: none !important; }
+            .lg-grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); } /* ADDED */
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-20">
+
+    <header class="bg-white border-b border-gray-200 sticky top-0 z-10">
+        <div class="max-w-7xl mx-auto px-4 sm-px-6 lg-px-8 py-3 flex justify-between items-center text-sm">
+            
+            <div class="flex items-center space-x-6">
+                <!-- Site Logo -->
+                <div class="text-3xl font-black text-gray-900 tracking-tighter cursor-pointer">
+                    W<span class="text-red-600">.</span>
+                </div>
+                <!-- Desktop Navigation -->
+                <nav class="hidden lg-flex space-x-4 font-semibold text-gray-700">
+                    <a href="#" class="hover-text-black">Explore</a>
+                    <a href="#" class="hover-text-black">Directory</a>
+                    <a href="#" class="hover-text-black font-black relative">
+                        Academy <span class="ml-1 text-xs px-1 bg-red-600 text-white rounded-md font-normal">New</span>
+                    </a>
+                    <a href="#" class="hover-text-black">Jobs</a>
+                    <a href="#" class="hover-text-black">Market</a>
+                </nav>
+            </div>
+
+            <div class="flex items-center space-x-4">
+                <!-- Search Input -->
+                <div class="hidden md-block">
+                    <input type="text" placeholder="Search by Inspiration" class="w-64 p-2 text-sm bg-gray-100 rounded-full border border-gray-200 focus-outline-none focus-border-gray-400 transition">
+                </div>
+                
+                <a href="#" class="hidden sm-block font-semibold text-gray-700 hover-text-black">Log In</a>
+
+                <!-- Buttons -->
+                <button class="hidden sm-block bg-black text-white font-semibold py-2 px-4 text-xs uppercase rounded-full tracking-wider hover-bg-gray-800 transition">
+                    Be Pro
+                </button>
+
+                <button class="bg-white text-gray-900 font-semibold py-2 px-4 text-xs uppercase rounded-full border border-gray-900 hover-bg-gray-100 transition">
+                    Submit Website
+                </button>
+
+                <!-- User Avatar (Replaced placeholder div with image) -->
+                <img src="https://placehold.co/28x28/9CA3AF/FFFFFF?text=P" alt="User Profile Avatar" class="w-7 h-7 rounded-full object-cover cursor-pointer border border-gray-300">
+            </div>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm-px-6 lg-px-8 flex flex-col items-center justify-center min-h-[60vh]">
+        
+        <div class="text-xs font-semibold uppercase text-gray-500 mb-6 flex space-x-4">
+            <p>Site of the Day</p>
+            <p>Oct 19, 2025</p>
+            <p>Score 7.25 of 10</p>
+        </div>
+
+        <section class="text-center mt-8">
+            <h1 class="hero-title text-6xl sm-text-8xl md-text-9xl font-black uppercase text-gray-900">
+                FLABBERGAST <br> AGENCY
+            </h1>
+        </section>
+
+        <!-- Agency / Creator Details (Placeholders replaced with images) -->
+        <div class="agency-details flex flex-col md-flex-row items-center justify-center space-y-4 md-space-y-0 md-space-x-8 text-sm font-semibold text-gray-800 mt-10">
+            
+            <div class="flex items-center space-x-2">
+                <img src="https://placehold.co/28x28/EF4444/FFFFFF?text=F" alt="Flabbergast Logo" class="w-7 h-7 rounded-full object-cover">
+                <p>Flabbergast <span class="text-xs text-red-600 ml-1">PRO</span></p>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <img src="https://placehold.co/28x28/3B82F6/FFFFFF?text=DK" alt="Domagoj Kapulica Avatar" class="w-7 h-7 rounded-full object-cover">
+                <p>Domagoj Kapulica</p>
+            </div>
+
+            <div class="flex items-center space-x-2">
+                <img src="https://placehold.co/28x28/10B981/FFFFFF?text=VR" alt="Vice Rukavina Avatar" class="w-7 h-7 rounded-full object-cover">
+                <p>Vice Rukavina</p>
+            </div>
+        </div>
+        
+    </main>
+    
+    <!-- LATEST NOMINEES SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm-px-6 lg-px-8 py-16">
+        
+        <div class="text-center mb-12">
+            <p class="text-sm font-semibold uppercase text-gray-500 mb-2">LATEST</p>
+            <h2 class="text-6xl sm-text-8xl font-black uppercase text-gray-900 flex justify-center items-center space-x-4">
+                <span>NOMINEES</span>
+                <span class="text-yellow-500 text-6xl">★</span> 
+            </h2>
+            <p class="text-lg text-gray-600 mt-2">
+                Vote for the latest websites on awwwards.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md-grid-cols-3 gap-8">
+            
+            <div class="project-card cursor-pointer transition">
+                <!-- Project Preview: Intentionally using styled div blocks for abstract design feel -->
+                <div class="bg-gray-100 rounded-lg overflow-hidden border border-gray-300">
+                    <div class="aspect-4-5 flex items-center justify-center text-center p-4">
+                        <div class="space-y-2">
+                            <p class="text-xs uppercase text-gray-500">Shop Bestsellers</p>
+                            <h3 class="text-3xl font-black text-gray-900">CANCAN</h3>
+                            <p class="text-xs uppercase text-gray-500">Living Spaces</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 flex justify-between items-center text-sm font-semibold">
+                    <p class="text-gray-900 uppercase">CANCAN Furnishings</p>
+                    <div class="flex items-center space-x-1">
+                        <span class="text-xs text-gray-500">350K+</span>
+                        <span class="text-red-600 font-bold">♥</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card cursor-pointer transition">
+                 <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-700">
+                    <div class="aspect-4-5 flex items-center justify-center text-center p-4">
+                        <div class="space-y-2 text-white">
+                            <p class="text-xs uppercase text-gray-400">The Rise of</p>
+                            <h3 class="text-3xl font-black text-white">AVATR</h3>
+                            <p class="text-xs uppercase text-gray-400">Futuristic Mobility</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 flex justify-between items-center text-sm font-semibold">
+                    <p class="text-gray-900 uppercase">AVATR VISION XPECTRA</p>
+                    <div class="flex items-center space-x-1">
+                        <span class="text-xs text-gray-500">M. Mobison</span>
+                        <span class="text-red-600 font-bold">♥</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card cursor-pointer transition">
+                 <div class="bg-gray-100 rounded-lg overflow-hidden border border-gray-300">
+                    <div class="aspect-4-5 flex items-center justify-center text-center p-4">
+                        <div class="space-y-2">
+                            <h3 class="text-3xl font-black text-gray-900">CRAFTSMAN.</h3>
+                            <h3 class="text-3xl font-black text-gray-900">SHIPS</h3>
+                            <p class="text-xs uppercase text-gray-500 pt-2">Japanese Calligraphy Mock</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-3 flex justify-between items-center text-sm font-semibold">
+                    <p class="text-gray-900 uppercase">CRAFTSMAN.SHIPS</p>
+                    <div class="flex items-center space-x-1">
+                        <span class="text-xs text-gray-500">JTYCHIOZDJI</span>
+                        <span class="text-red-600 font-bold">♥</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        
+        <div class="text-center mt-12 text-sm font-semibold">
+            <span class="text-gray-600">Check out all submitted websites</span>
+            <span class="mx-3 text-gray-400">|</span>
+            <a href="#" class="text-gray-800 hover-text-red-600 flex items-center justify-center space-x-1">
+                <span>View Nominees</span>
+                <span>&rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- RECENT SITES OF THE DAY SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm-px-6 lg-px-8 py-16">
+        
+        <div class="text-center md-text-left mb-8">
+            <h2 class="text-2xl font-bold uppercase text-gray-900">
+                Recent Sites <br> of the Day.
+            </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md-grid-cols-3 gap-8">
+            
+            <div class="project-card cursor-pointer transition">
+                <div class="bg-gray-800 rounded-lg overflow-hidden border border-gray-700">
+                    <div class="aspect-4-3 flex items-center justify-center p-4">
+                        <div class="text-white space-y-1">
+                            <p class="text-xs font-semibold uppercase text-gray-400">Timepieces</p>
+                            <h3 class="text-xl font-black">AUDEMARS <br> PIGUET</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2 flex justify-between items-center text-xs font-semibold">
+                    <p class="text-gray-900">LaPlaque Studio</p>
+                    <p class="text-gray-500">Rivine Zugross</p>
+                </div>
+            </div>
+
+            <div class="project-card cursor-pointer transition">
+                <div class="bg-orange-600 rounded-lg overflow-hidden border border-orange-700">
+                    <div class="aspect-4-3 flex items-center justify-center p-4">
+                        <div class="text-white space-y-1 text-center">
+                            <h3 class="text-xl font-black">A NEW ERA <br> IN GRID INTELLIGENCE</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2 flex justify-between items-center text-xs font-semibold">
+                    <p class="text-gray-900">Heimdal Power</p>
+                    <p class="text-gray-500">Hifactory</p>
+                </div>
+            </div>
+
+            <div class="project-card cursor-pointer transition">
+                <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-700">
+                    <div class="aspect-4-3 flex items-center justify-center p-4">
+                        <div class="text-white space-y-1 text-center">
+                            <p class="text-xs font-semibold uppercase text-gray-400">Digital Marketing</p>
+                            <h3 class="text-xl font-black">Giga G2 DMGT Portfolio</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2 flex justify-between items-center text-xs font-semibold">
+                    <p class="text-gray-900">Samuil Yerokhin</p>
+                    <p class="text-gray-500">Samuil Yerokhin</p>
+                </div>
+            </div>
+
+            <div class="project-card cursor-pointer transition">
+                <div class="bg-gray-900 rounded-lg overflow-hidden border border-gray-700">
+                    <div class="aspect-4-3 flex items-center justify-center p-4">
+                        <div class="text-white space-y-1 text-center">
+                            <p class="text-xs font-semibold uppercase text-white">WE MAKE</p>
+                            <h3 class="text-3xl font-black text-yellow-400">LAUGHS</h3>
+                            <h3 class="text-3xl font-black text-yellow-400">THAT LOOK</h3>
+                            <h3 class="text-3xl font-black text-yellow-400">GOOD</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2 flex justify-between items-center text-xs font-semibold">
+                    <p class="text-gray-900">Working with Fabien</p>
+                    <p class="text-gray-500">Wizworthly</p>
+                </div>
+            </div>
+
+            <div class="project-card cursor-pointer transition">
+                <div class="bg-indigo-900 rounded-lg overflow-hidden border border-indigo-700">
+                    <div class="aspect-4-3 flex items-center justify-center p-4">
+                        <div class="text-white space-y-1 text-center">
+                            <h3 class="text-2xl font-black text-red-400">JOIN THE <br> NEW ERA OF <br> GAMING</h3>
+                        </div>
+                    </div>
+                </div>
+                  <div class="mt-2 flex justify-between items-center text-xs font-semibold">
+                    <p class="text-gray-900">Ink Games</p>
+                    <p class="text-gray-500">Highlight</p>
+                </div>
+            </div>
+
+            <div class="project-card cursor-pointer transition">
+                <div class="bg-white rounded-lg overflow-hidden border border-gray-300">
+                    <div class="aspect-4-3 flex items-center justify-center p-4">
+                        <div class="space-y-1 text-center">
+                             <p class="text-xs font-semibold uppercase text-gray-500">Creativity that moves you</p>
+                             <h3 class="text-xl font-black text-gray-900">LIPMAN - <br> MUDSON</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-2 flex justify-between items-center text-xs font-semibold">
+                    <p class="text-gray-900">LIPMAN</p>
+                    <p class="text-gray-500">Mudson</p>
+                </div>
+            </div>
+            
+        </div>
+        
+        <div class="text-center mt-12 text-sm font-semibold">
+            <span class="text-gray-600">Explore more great work</span>
+            <span class="mx-3 text-gray-400">|</span>
+            <a href="#" class="text-gray-800 hover-text-red-600 flex items-center justify-center space-x-1">
+                <span>Browse All Sites of the Day</span>
+                <span>&rarr;</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- NEW FEATURED SUBMISSION SECTION -->
+    <section id="weekly-showcase" class="max-w-7xl mx-auto px-4 sm-px-6 lg-px-8 mb-24">
+        <div class="weekly-showcase-container">
+            <div class="showcase-flex">
+                
+                <div class="max-w-3xl mb-6-lg-0">
+                    <p class="text-xs uppercase text-yellow-500 font-semibold mb-1 tracking-wider">Editor's Pick</p>
+                    <h2 class="text-3xl md-text-5xl font-black mb-3 tracking-tighter leading-tight text-gray-900">
+                        A New Era of Digital Design
+                    </h2>
+                    <p class="text-lg text-gray-700">
+                        Check out *'Nebula,'* our latest site of the day winner, a stunning blend of 3D artistry and intuitive UX. This is where innovation meets the canvas.
+                    </p>
+                </div>
+
+                <div class="flex-shrink-0">
+                    <button class="showcase-btn">
+                        View Case Study
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CREATORS DIRECTORY SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm-px-6 lg-px-8 py-16">
+        
+        <div class="text-center mb-12">
+            <p class="text-sm font-semibold uppercase text-gray-500 mb-2">DIRECTORY</p>
+            <h2 class="text-6xl sm-text-8xl font-black uppercase text-gray-900 flex justify-center items-center space-x-4">
+                <span>W.CREATORS</span>
+                <span class="text-7xl">😍</span> 
+            </h2>
+            <p class="text-lg text-gray-600 mt-2">
+                Active creators in your country.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md-grid-cols-3 gap-6 mb-12">
+            
+            <div class="creator-card cursor-pointer hover-opacity-90 transition">
+                <div class="flex justify-between items-start">
+                    <p class="text-xs uppercase text-gray-400">Agency</p>
+                    <!-- Placeholder: Text Logo -->
+                    <div class="text-sm font-black text-green-400">OD</div>
+                </div>
+                
+                <div>
+                    <h3 class="text-4xl font-black mb-1">The Working <br> Party</h3>
+                    <div class="flex space-x-4 text-xs font-semibold text-gray-400">
+                        <p>Sydney, Australia</p>
+                        <p>3 projects</p>
+                        <p>12 experts</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="creator-card cursor-pointer hover-opacity-90 transition">
+                <div class="flex justify-between items-start">
+                    <p class="text-xs uppercase text-gray-400">Agency</p>
+                    <!-- Placeholder: Image Logo (Replaced placeholder div with image) -->
+                    <img src="https://placehold.co/32x32/7C3AED/FFFFFF?text=A" alt="Airnauts Logo" class="w-8 h-8 rounded-full object-cover">
+                </div>
+                
+                <div>
+                    <h3 class="text-4xl font-black mb-1">Airnauts</h3>
+                    <div class="flex space-x-4 text-xs font-semibold text-gray-400">
+                        <p>airnauts.com</p>
+                        <p>10 projects</p>
+                        <p>15 experts</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="creator-card cursor-pointer hover-opacity-90 transition">
+                <div class="flex justify-between items-start">
+                    <p class="text-xs uppercase text-gray-400">Studio</p>
+                    <!-- Placeholder: Text Logo -->
+                    <div class="text-sm font-black text-blue-400">CL</div>
+                </div>
+                
+                <div>
+                    <h3 class="text-4xl font-black mb-1">Clay</h3>
+                    <div class="flex space-x-4 text-xs font-semibold text-gray-400">
+                        <p>Global</p>
+                        <p>23 projects</p>
+                        <p>40 experts</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="border-t border-b border-gray-200 divide-y-gray-200">
+            
+            <!-- Table Header -->
+            <div class="hidden md-grid grid-cols-7 py-3 px-4 text-xs font-semibold uppercase text-gray-500">
+                <div class="col-span-2">Name</div>
+                <div>Type</div>
+                <div>Projects</div>
+                <div>Category</div>
+                <div>Location</div>
+                <div>Action</div>
+            </div>
+
+            <!-- Table Rows (I've added the location column for consistency with the 7-column grid) -->
+            <div class="grid grid-cols-7 py-4 px-4 items-center hover-bg-gray-50 transition">
+                <div class="col-span-2 font-bold text-sm">Visual Identity™</div>
+                <div class="text-sm text-gray-700">Studio</div>
+                <div class="text-sm text-gray-700">12</div>
+                <div class="text-sm text-gray-700 hidden md-block">Web Dev, UI/UX</div>
+                <div class="text-sm text-gray-700 hidden md-block">Netherlands</div>
+                <div class="text-sm text-gray-500 font-semibold cursor-pointer border border-gray-400 rounded-full w-8 h-8 flex items-center justify-center hover-bg-gray-100 justify-self-end">
+                    +
+                </div>
+            </div>
+
+            <div class="grid grid-cols-7 py-4 px-4 items-center hover-bg-gray-50 transition">
+                <div class="col-span-2 font-bold text-sm">Liquid & Design™</div>
+                <div class="text-sm text-gray-700">Studio</div>
+                <div class="text-sm text-gray-700">3</div>
+                <div class="text-sm text-gray-700 hidden md-block">Interactive</div>
+                <div class="text-sm text-gray-700 hidden md-block">United States</div>
+                <div class="text-sm text-gray-500 font-semibold cursor-pointer border border-gray-400 rounded-full w-8 h-8 flex items-center justify-center hover-bg-gray-100 justify-self-end">
+                    +
+                </div>
+            </div>
+
+            <div class="grid grid-cols-7 py-4 px-4 items-center hover-bg-gray-50 transition">
+                <div class="col-span-2 font-bold text-sm">XP Design™</div>
+                <div class="text-sm text-gray-700">Studio</div>
+                <div class="text-sm text-gray-700">7</div>
+                <div class="text-sm text-gray-700 hidden md-block">Web Design, UI</div>
+                <div class="text-sm text-gray-700 hidden md-block">Australia</div>
+                <div class="text-sm text-gray-500 font-semibold cursor-pointer border border-gray-400 rounded-full w-8 h-8 flex items-center justify-center hover-bg-gray-100 justify-self-end">
+                    +
+                </div>
+            </div>
+
+            <div class="grid grid-cols-7 py-4 px-4 items-center hover-bg-gray-50 transition">
+                <div class="col-span-2 font-bold text-sm">T-Media</div>
+                <div class="text-sm text-gray-700">Agency</div>
+                <div class="text-sm text-gray-700">21</div>
+                <div class="text-sm text-gray-700 hidden md-block">Web Dev, UI/UX</div>
+                <div class="text-sm text-gray-700 hidden md-block">Italy</div>
+                <div class="text-sm text-gray-500 font-semibold cursor-pointer border border-gray-400 rounded-full w-8 h-8 flex items-center justify-center hover-bg-gray-100 justify-self-end">
+                    +
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center mt-10 text-sm font-semibold">
+            <span class="text-gray-600">Connect with more SOTD Experts and Professionals</span>
+            <span class="mx-3 text-gray-400">|</span>
+            <a href="#" class="text-gray-800 hover-text-red-600 flex items-center justify-center space-x-1">
+                <span>View Directory</span>
+                <span>&rarr;</span>
+            </a>
+        </div>
+        
+    </section>
+
+    <!-- POPULAR POSTS / BLOG SECTION (New Content) -->
+    <section class="max-w-7xl mx-auto px-4 sm-px-6 lg-px-8 py-16">
+        
+        <h2 class="text-3xl sm-text-4xl font-black uppercase text-gray-900 mb-12">
+            Explore these popular posts.
+        </h2>
+
+        <!-- The Blog Grid (Responsive: 1 column -> 2 columns -> 4 columns) -->
+        <div class="grid grid-cols-1 md-grid-cols-2 lg-grid-cols-4 gap-6">
+            
+            <!-- Card 1: Shopify vs Woo -->
+            <div class="flex flex-col space-y-3 cursor-pointer project-card">
+                <div class="aspect-4-3 rounded-xl overflow-hidden border border-gray-300 flex items-center justify-center p-4">
+                    <!-- Placeholder: Image -->
+                    <img src="https://placehold.co/400x300/10B981/FFFFFF?text=Shopify+vs+Woo" alt="Shopify vs WooCommerce comparison" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-xl font-black text-gray-900">Shopify vs WooCommerce: What's the better?</h3>
+                <p class="text-sm text-gray-600">What's the best website builder for an e-commerce? In the world of eCommerce, choosing the right platform can mean the difference between success...</p>
+            </div>
+
+            <!-- Card 2: Free Fonts -->
+            <div class="flex flex-col space-y-3 cursor-pointer project-card">
+                <div class="aspect-4-3 rounded-xl overflow-hidden border border-gray-700 bg-gray-900 flex items-center justify-center p-4">
+                    <!-- Placeholder: Image -->
+                    <img src="https://placehold.co/400x300/374151/D1D5DB?text=100+Free+Fonts+2025" alt="100 Best Free Fonts for Designers in 2025" class="w-full h-full object-cover">
+                </div>
+                <h3 class="text-xl font-black text-gray-900">100 Best Free Fonts for Designers in 2025</h3>
+                <p class="text-sm text-gray-600">Typography is currently playing a central role in web design, with progressive improvements like Variable Fonts, CSS Shapes, FlexBox</p>
+            </div>
+
+            <!-- Card 3: Gradients -->
+            <div class="flex flex-col space-y-3 cursor-pointer project-card">
+                <div class="aspect-4-3 rounded-xl overflow-hidden border border-gray-300 bg-gray-100 flex items-center justify-center p-4">
+                    <!-- Placeholder: Text/Abstract Design -->
+                    <div class="text-center">
+                        <h3 class="text-5xl font-black tracking-tighter text-gray-900 leading-none">gradients</h3>
+                        <p class="text-xl font-black text-gray-700">&rarr; [Color Circles]</p>
+                    </div>
+                </div>
+                <h3 class="text-xl font-black text-gray-900">Trendy Gradients in Web Design</h3>
+                <p class="text-sm text-gray-600">This year we have seen many klip multicolored gradients with vibrant color palettes and irregular shapes with blur and distortion effects. Gradients...</p>
+            </div>
+
+            <!-- Card 4: Parallax -->
+            <div class="flex flex-col space-y-3 cursor-pointer project-card">
+                <div class="aspect-4-3 rounded-xl overflow-hidden border border-gray-300 bg-gray-100 flex items-center justify-center p-4">
+                    <!-- Placeholder: Image with text overlay -->
+                    <div class="relative w-full h-full">
+                        <img src="https://placehold.co/400x300/E5E7EB/1F2937?text=Model" alt="Model" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black opacity-30"></div>
+                        <h3 class="absolute bottom-4 left-4 text-3xl font-black tracking-tighter text-white leading-tight">PARALLAX</h3>
+                    </div>
+                </div>
+                <h3 class="text-xl font-black text-gray-900">30 Great Websites with Parallax Scrolling</h3>
+                <p class="text-sm text-gray-600">The parallax effect has been around for years in classic video games, but fastflop became a trend in the web design world. This cool effect is...</p>
+            </div>
+            
+        </div>
+
+        <div class="text-center mt-16 text-sm font-semibold">
+            <a href="#" class="text-gray-600 hover-text-red-600 flex items-center justify-center space-x-2">
+                <span>Browse all articles</span>
+                <span class="text-gray-400">|</span>
+                <span>View Blog</span>
+            </a>
+        </div>
+    </section>
+
+    <!-- SOTD SCORE SECTION -->
+    <section class="max-w-7xl mx-auto px-4 sm-px-6 lg-px-8 py-16">
+
+        <div class="flex justify-between items-start mb-24">
+            <div class="space-y-4">
+                <h2 class="text-7xl sm-text-9xl font-black uppercase text-gray-900 leading-none">
+                    SOTD / <br> SCORE
+                </h2>
+                <div class="flex items-end space-x-4 ml-2">
+                    <span class="text-6xl font-black text-gray-900">
+                        &rarr;
+                    </span>
+                    <span class="text-6xl font-black text-gray-900">
+                        7.56
+                    </span>
+                    <span class="text-2xl font-bold text-gray-500">
+                        / 10
+                    </span>
+                </div>
+            </div>
+
+            <a href="#" class="text-sm font-bold text-gray-600 uppercase pt-4">
+                Evaluation System
+            </a>
+        </div>
+
+        <!-- Score Bars -->
+        <div class="grid grid-cols-4 gap-6 mb-12">
+            <div>
+                <p class="text-sm font-bold uppercase text-gray-700 mb-2">Design</p>
+                <p class="text-xs font-semibold uppercase text-gray-500 mb-2">40%</p>
+                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div class="h-full bg-gray-900" style="width: 78%;"></div>
+                </div>
+            </div>
+
+            <div>
+                <p class="text-sm font-bold uppercase text-gray-700 mb-2">Usability</p>
+                <p class="text-xs font-semibold uppercase text-gray-500 mb-2">30%</p>
+                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div class="h-full bg-gray-900" style="width: 72%;"></div>
+                </div>
+            </div>
+
+            <div>
+                <p class="text-sm font-bold uppercase text-gray-700 mb-2">Creativity</p>
+                <p class="text-xs font-semibold uppercase text-gray-500 mb-2">20%</p>
+                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div class="h-full bg-gray-900" style="width: 77%;"></div>
+                </div>
+            </div>
+
+            <div>
+                <p class="text-sm font-bold uppercase text-gray-700 mb-2">Content</p>
+                <p class="text-xs font-semibold uppercase text-gray-500 mb-2">10%</p>
+                <div class="h-2 bg-gray-200 rounded-full overflow-hidden">
+                    <div class="h-full bg-gray-900" style="width: 78%;"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Average Scores -->
+        <div class="grid grid-cols-4 gap-6 border-b border-gray-200 pb-8 mb-12">
+            <p class="text-lg font-bold text-gray-900">7.81 / 10</p>
+            <p class="text-lg font-bold text-gray-900">7.28 / 10</p>
+            <p class="text-lg font-bold text-gray-900">7.77 / 10</p>
+            <p class="text-lg font-bold text-gray-900">7.82 / 10</p>
+        </div>
+
+        <!-- Voting Breakdown Header -->
+        <div class="grid grid-cols-7 text-xs font-semibold uppercase text-gray-500 border-b border-gray-200 pb-2 mb-4">
+            <div class="col-span-2">Votes</div>
+            <div>Jury</div>
+            <div>Community Members</div>
+            <div>Design</div>
+            <div>Usability</div>
+            <div>Content</div>
+        </div>
+
+        <!-- Single Voter Row -->
+        <div class="grid grid-cols-1 md-grid-cols-7 items-center py-4 border-b border-gray-200">
+            <div class="col-span-1 md-col-span-2 flex items-center space-x-4 mb-4 md-mb-0">
+                <!-- Voter Avatar (Replaced placeholder div with image) -->
+                <img src="https://placehold.co/40x40/9CA3AF/1F2937?text=AS" alt="Artem Shcherban Avatar" class="w-10 h-10 rounded-full object-cover">
+                <div class="text-sm">
+                    <p class="font-bold text-gray-900">Artem Shcherban <span class="text-gray-500 font-normal">from Kazakhstan</span></p>
+                    <p class="text-xs text-gray-500">UI UX designer</p>
+                </div>
+            </div>
+
+            <div class="col-span-6 md-col-span-5 grid grid-cols-6 items-center text-sm font-semibold">
+                <div class="col-span-2 flex space-x-2">
+                    <span class="bg-black text-white px-2 py-1 rounded-full text-xs font-bold tracking-wider">W.</span>
+                    <span class="bg-gray-100 text-gray-700 px-2 py-1 rounded-full text-xs font-semibold">Creator & Color</span>
+                </div>
+                <p class="text-gray-900">7</p>
+                <p class="text-gray-900">8</p>
+                <p class="text-gray-900">7</p>
+                <div class="flex items-center justify-end space-x-4">
+                    <p class="text-base font-black text-gray-900">7.30</p>
+                    <button class="bg-gray-100 text-gray-700 font-semibold py-2 px-4 text-xs uppercase rounded-full border border-gray-300 hover-bg-gray-200 transition">
+                        Visit Site
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+    </section>
+
+    <!-- CALL TO ACTION SECTION & FOOTER -->
+    <section class="max-w-7xl mx-auto px-4 sm-px-6 lg-px-8 pt-16 pb-32">
+        
+        <div class="grid grid-cols-1 md-grid-cols-2 gap-6 mb-20">
+            
+            <div class="bg-black text-white rounded-xl p-8 md-p-12 min-h-300 flex flex-col justify-between relative overflow-hidden">
+                <p class="text-sm font-semibold uppercase text-gray-400">Share your work</p>
+                
+                <div class="my-6">
+                    <h3 class="text-4xl md-text-5xl font-black leading-tight mb-6">
+                        Submit your website for <br> *visibility and recognition*
+                    </h3>
+                    <button class="bg-white text-black font-semibold py-3 px-6 text-sm uppercase rounded-full tracking-wider hover-bg-gray-200 transition">
+                        Submit Now
+                    </button>
+                </div>
+            </div>
+
+            <div class="bg-gray-100 text-gray-900 rounded-xl p-8 md-p-12 min-h-300 flex flex-col justify-between relative overflow-hidden border border-gray-200">
+                <p class="text-sm font-semibold uppercase text-gray-500">Hire an expert</p>
+                
+                <div class="my-6">
+                    <h3 class="text-4xl md-text-5xl font-black leading-tight mb-6">
+                        Find the best creative talent <br> for your *next project*
+                    </h3>
+                    <button class="bg-gray-900 text-white font-semibold py-3 px-6 text-sm uppercase rounded-full tracking-wider hover-bg-black transition">
+                        View Directory
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="grid grid-cols-2 md-grid-cols-5 gap-8 border-t border-gray-200 pt-16">
+            
+            <div class="col-span-2 md-col-span-1">
+                <div class="text-3xl font-black text-gray-900 tracking-tighter cursor-pointer">
+                    W<span class="text-red-600">.</span>
+                </div>
+                <p class="text-xs text-gray-500 mt-4">*W. is an online directory for digital design and innovation.*</p>
+            </div>
+
+            <div>
+                <h4 class="text-sm font-bold uppercase text-gray-900 mb-4">Awwwards</h4>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li><a href="#" class="hover-text-black">About</a></li>
+                    <li><a href="#" class="hover-text-black">Contribute</a></li>
+                    <li><a href="#" class="hover-text-black">Academy</a></li>
+                    <li><a href="#" class="hover-text-black">Jobs</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-sm font-bold uppercase text-gray-900 mb-4">Legal</h4>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li><a href="#" class="hover-text-black">Privacy Policy</a></li>
+                    <li><a href="#" class="hover-text-black">Cookies</a></li>
+                    <li><a href="#" class="hover-text-black">Terms of Service</a></li>
+                </ul>
+            </div>
+
+            <div class="col-span-2 md-col-span-1">
+                <h4 class="text-sm font-bold uppercase text-gray-900 mb-4">Connect</h4>
+                <ul class="space-y-2 text-sm text-gray-600">
+                    <li><a href="#" class="hover-text-black">Instagram</a></li>
+                    <li><a href="#" class="hover-text-black">Twitter</a></li>
+                    <li><a href="#" class="hover-text-black">LinkedIn</a></li>
+                    <li><a href="#" class="hover-text-black">Contact</a></li>
+                </ul>
+            </div>
+        </footer>
+    </section>
+</body>
+</html>
